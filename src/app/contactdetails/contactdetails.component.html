@@ -1,0 +1,81 @@
+<div  class="container">
+    <div class="conatiner-fluid">
+        <div class="row">
+            <div class="col-md-8">
+              <h1 align="center" class="text-danger">Contact Our</h1>
+              <h2 align="center">Customer Support Center</h2>
+            </div>
+            <div class="col-md-2">
+              <img src="/assets/laptop.jpeg" align ="right" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-center">Contact Information</h4>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-8">
+              <p class="float-right">Please fill out your contact infomation below.</p>
+              </div>
+          </div>
+    </div>
+    <div class="container-fluid">
+      <form [formGroup]="contactForm">
+          <div class="form-group required">
+                <label class="control-label">Your Name</label>
+            <div class="row">
+              <div class="col-md-4 required">
+                    <label>First Name</label>  
+                <input [class.is-invalid]="contactForm.get('firstname').invalid && contactForm.get('firstname').touched" type="text" class="form-control" formControlName="firstname">
+                  
+                  <small [class.d-none]="contactForm.get('firstname').valid || contactForm.get('firstname').untouched" class="text-danger">First Name is required</small>
+ 
+              </div>
+              <div class="col-md-4">
+                    <label>Last Name</label>  
+                <input [class.is-invalid]="contactForm.get('lastname').invalid && contactForm.get('lastname').touched" type="text" class="form-control" formControlName="lastname">
+                  
+                  <small [class.d-none]="contactForm.get('lastname').valid || contactForm.get('lastname').untouched" class="text-danger">Last Name is required</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group required">
+              <div class="row">
+                  <div class="col-md-8">
+                      <label class="control-label">Email</label>
+                     <input [class.is-invalid]="contactForm.get('email').invalid && contactForm.get('email').touched" type="email" class="form-control" formControlName="email">
+                     <small [class.d-none]="contactForm.get('email').valid|| contactForm.get('email').untouched" class="text-danger">Email id is not valid.</small>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group required">
+              <div class="row">
+                  <div class="col-md-8">
+                      <label class="control-label">Phone</label>
+                     <input [class.is-invalid]="contactForm.get('phone').invalid && contactForm.get('phone').touched" type="tel" class="form-control" formControlName="phone">
+                     <small [class.d-none]="contactForm.get('phone').valid || contactForm.get('phone').untouched" class="text-danger">Mobile number is Compulsorry for further communication.</small>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group required">
+              <div class="row">
+                  <div class="col-md-8">
+                      <label class="control-label">Address</label>
+                      <textarea [class.is-invalid]="contactForm.get('address').invalid && contactForm.get('address').touched" class="form-control" formControlName="address"></textarea>
+                      <small [class.d-none]="contactForm.get('address').valid || contactForm.get('address').untouched" class="text-danger">Address is required</small>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-8">
+                        <button type="button" class="btn btn-primary ml-3" (click)="SetData()">Set Values</button>
+                      <button class="btn btn-primary float-right" type="submit">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+      
+    </div>
+</div>
