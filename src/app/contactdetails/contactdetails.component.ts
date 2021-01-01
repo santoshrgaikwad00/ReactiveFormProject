@@ -24,7 +24,7 @@ export class ContactdetailsComponent implements OnInit {
         firstname : 'Kiran',
         lastname : 'Khade',
         email :  'kiran.khade2008@gmail.com',
-        phone : '9637898945',
+        phone : '9637000000',
         address :'Pune'
       }
     )
